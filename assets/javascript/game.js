@@ -4,10 +4,8 @@ var computerGuess;
 var wrongGuesses = [];
 var userWins = 0;
 function init () {
-    chances = 0
-// Reset the chances to 
+chances = 0
 };
-
 
 var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -22,9 +20,11 @@ document.onkeyup = function(event) {
     }
     
     if (computerGuess !== userKeyPressed) {
+        
         if ( wrongGuesses.indexOf(userKeyPressed) == -1) { 
             wrongGuesses.push(userKeyPressed);
             chances--; 
+           
             if (chances === 0) {
                 losses ++
                 var userLosses = document.getElementById("losses")
@@ -46,13 +46,10 @@ document.onkeyup = function(event) {
     }
               var chancesleft = document.getElementById("guesses-left");
               chancesleft.textContent = chances 
-           var chancessofar = document.getElementById("guesses-so-far")
-            chancessofar.textContent = wrongGuesses
+              var chancessofar = document.getElementById("guesses-so-far")
+              chancessofar.textContent = wrongGuesses
 
 }
         
     console.log(wrongGuesses);
     
-    
-    // var theChances = document.getElementById("guesses-left")
-    // theChances.textContent = chances
